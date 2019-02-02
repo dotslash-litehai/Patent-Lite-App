@@ -14,17 +14,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".Navigation2Activity"
+            android:label="@string/title_activity_navigation2"></activity>
+        <activity
             android:name=".NavigationActivity"
-            android:label="@string/title_activity_navigation"/>
-        <activity android:name=".LoginActivity" >
+            android:label="@string/title_activity_navigation" />
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
-    </application>
+   </application>
 
 </manifest>

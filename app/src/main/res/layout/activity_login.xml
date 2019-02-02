@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/buttonbg"
-            android:text="Applicant" />
+            android:text="Applicant"
+            android:textColor="#000000"/>
 
         <Button
             android:id="@+id/appraiser"
@@ -27,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/buttonbg"
-            android:text="Appraiser" />
+            android:text="Appraiser"
+            android:textColor="#000000"/>
 
         <Button
             android:id="@+id/inspector"
@@ -35,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/buttonbg"
-            android:text="Inspector" />
+            android:text="Inspector"
+            android:textColor="#000000"/>
 
         <Button
             android:id="@+id/admin"
@@ -43,7 +46,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/adminbg"
-            android:text="Admin" />
+            android:text="Admin"
+            android:textColor="#000000"/>
 
     </LinearLayout>
 </RelativeLayout>

@@ -8,9 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import java.util.Objects;
-
-public class NavigationActivity extends AppCompatActivity {
+public class Navigation2Activity extends AppCompatActivity {
 
     private ViewPager viewPager;
 
@@ -26,9 +24,6 @@ public class NavigationActivity extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     viewPager.setCurrentItem(1);
                     return true;
-                case R.id.navigation_notifications:
-                    viewPager.setCurrentItem(2);
-                    return true;
             }
             return false;
         }
@@ -37,9 +32,10 @@ public class NavigationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        viewPager = findViewById(R.id.viewpager);
+        setContentView(R.layout.activity_navigation2);
+
+        BottomNavigationView navigation = findViewById(R.id.navigation2);
+        viewPager = findViewById(R.id.viewpager2);
 
         // Create an adapter that knows which fragment should be shown on each page
         SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());

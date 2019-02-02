@@ -23,14 +23,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 role = 4;
-                redirect();
+                redirect2();
             }
         });
         appraiser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 role = 2;
-                redirect();
+                redirect2();
             }
         });
         applicant.setOnClickListener(new View.OnClickListener() {
@@ -44,12 +44,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 role = 3;
-                redirect();
+                redirect2();
             }
         });
     }
     public void redirect() {
         Intent intent = new Intent(this, NavigationActivity.class);
+        intent.putExtra("role", role);
+        startActivity(intent);
+    }
+
+    public void redirect2() {
+        Intent intent = new Intent(this, Navigation2Activity.class);
         intent.putExtra("role", role);
         startActivity(intent);
     }

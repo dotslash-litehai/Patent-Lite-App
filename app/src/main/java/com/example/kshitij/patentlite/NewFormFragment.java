@@ -28,6 +28,7 @@ public class NewFormFragment extends Fragment {
     private ProgressBar progressBar;
     private LinearLayout linearLayout;
     private TextView fail_text;
+    private int role = 1;
 
     public NewFormFragment() {
         // Required empty public constructor
