@@ -13,9 +13,8 @@
         <LinearLayout
             android:id="@+id/newContract"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:visibility="invisible"
             android:orientation="vertical">
 
             <TextView
@@ -158,6 +157,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/submitContract"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="@color/bg"
+            android:layout_below="@id/newContract"
+            android:padding="8dp"/>
     </RelativeLayout>
 
 </FrameLayout>
