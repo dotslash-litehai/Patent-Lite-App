@@ -77,8 +77,10 @@ public class NewFormFragment extends Fragment {
                     @Override
                     public void run() {
                         if(myResponse.equals("false")){
+                            linearLayout.setVisibility(View.GONE);
                             fail_text.setVisibility(View.VISIBLE);
                         } else {
+                            fail_text.setVisibility(View.GONE);
                             linearLayout.setVisibility(View.VISIBLE);
                         }
                         progressBar.setVisibility(View.GONE);

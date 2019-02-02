@@ -21,12 +21,15 @@ public class NavigationActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    setTitle("Applications");
                     viewPager.setCurrentItem(0);
                     return true;
                 case R.id.navigation_dashboard:
+                    setTitle("Status");
                     viewPager.setCurrentItem(1);
                     return true;
                 case R.id.navigation_notifications:
+                    setTitle("New Patent");
                     viewPager.setCurrentItem(2);
                     return true;
             }

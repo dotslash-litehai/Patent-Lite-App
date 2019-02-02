@@ -13,8 +13,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginTop="50dp"
-            android:visibility="invisible"
             android:id="@+id/newContract">
+
+            <EditText
+                android:id="@+id/abstractForm"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edittext_top_gray"
+                android:hint="Abstract"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/urlText"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edittext_top_gray"
+                android:hint="Google Drive Link"
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/descriptionContract"
@@ -23,8 +46,9 @@
                 android:layout_height="42dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_top_gray"
-                android:hint="Description"
+                android:hint="Tags"
                 android:inputType="textEmailAddress" />
 
             <EditText
@@ -50,7 +74,6 @@
             android:layout_centerInParent="true"
             android:textAlignment="center"
             android:id="@+id/failed"
-            android:visibility="invisible"
             android:text="Unfortunately you are not allowed to accesss the information. Only applicants can create new patents"/>
 
         <ProgressBar
