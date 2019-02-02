@@ -21,7 +21,6 @@ import okhttp3.Response;
 public class ApplicationFragment extends Fragment {
 
     private View rootview;
-    private TextView text;
 
     public ApplicationFragment() {
 
@@ -32,7 +31,6 @@ public class ApplicationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_application, container, false);
-        text = rootview.findViewById(R.id.applications);
         try {
             run();
         } catch (IOException e) {
@@ -67,7 +65,6 @@ public class ApplicationFragment extends Fragment {
                 Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        text.setText(myResponse);
                     }
                 });
 

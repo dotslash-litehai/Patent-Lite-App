@@ -35,7 +35,7 @@ public class Navigation2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation2);
-
+        setTitle("Applications");
         BottomNavigationView navigation = findViewById(R.id.navigation2);
         viewPager = findViewById(R.id.viewpager2);
 

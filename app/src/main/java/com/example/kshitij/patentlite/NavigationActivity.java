@@ -41,6 +41,7 @@ public class NavigationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+        setTitle("Applications");
         BottomNavigationView navigation = findViewById(R.id.navigation);
         viewPager = findViewById(R.id.viewpager);
 
