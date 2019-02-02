@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/applicant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Applicant"
+            android:background="@color/buttonbg"/>
+
+        <Button
+            android:id="@+id/appraiser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appraiser"
+            android:background="@color/buttonbg"/>
+
+        <Button
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin"
+            android:background="@color/adminbg"/>
+
+        <Button
+            android:id="@+id/inspector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inspector"
+            android:background="@color/buttonbg"/>
+
+    </LinearLayout>
+</RelativeLayout>
