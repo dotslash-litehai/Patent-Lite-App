@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@color/bg">
+    android:background="@color/bg"
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,31 +15,35 @@
 
         <Button
             android:id="@+id/applicant"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Applicant"
-            android:background="@color/buttonbg"/>
+            android:layout_margin="8dp"
+            android:background="@color/buttonbg"
+            android:text="Applicant" />
 
         <Button
             android:id="@+id/appraiser"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Appraiser"
-            android:background="@color/buttonbg"/>
-
-        <Button
-            android:id="@+id/admin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Admin"
-            android:background="@color/adminbg"/>
+            android:layout_margin="8dp"
+            android:background="@color/buttonbg"
+            android:text="Appraiser" />
 
         <Button
             android:id="@+id/inspector"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Inspector"
-            android:background="@color/buttonbg"/>
+            android:layout_margin="8dp"
+            android:background="@color/buttonbg"
+            android:text="Inspector" />
+
+        <Button
+            android:id="@+id/admin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/adminbg"
+            android:text="Admin" />
 
     </LinearLayout>
 </RelativeLayout>
