@@ -5,11 +5,59 @@
     android:layout_height="match_parent"
     tools:context=".NewFormFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:id="@+id/newApplication"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:visibility="invisible"
+            android:id="@+id/newContract">
+
+            <EditText
+                android:id="@+id/descriptionContract"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edittext_top_gray"
+                android:hint="Description"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/numberClaims"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/edittext_bottom_gray"
+                android:hint="Claims"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin = "16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:id="@+id/failed"
+            android:visibility="invisible"
+            android:text="Unfortunately you are not allowed to accesss the information. Only applicants can create new patents"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/progressBar"/>
+    </RelativeLayout>
 
 </FrameLayout>

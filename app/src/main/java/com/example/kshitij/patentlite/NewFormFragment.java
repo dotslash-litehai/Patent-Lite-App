@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -22,7 +24,10 @@ import okhttp3.Response;
 public class NewFormFragment extends Fragment {
 
     private View rootview;
-    private TextView text;
+    private String response;
+    private ProgressBar progressBar;
+    private LinearLayout linearLayout;
+    private TextView fail_text;
 
     public NewFormFragment() {
         // Required empty public constructor
@@ -33,7 +38,9 @@ public class NewFormFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_new_form, container, false);
-        text = rootview.findViewById(R.id.newApplication);
+        progressBar = rootview.findViewById(R.id.progressBar);
+        fail_text = rootview.findViewById(R.id.failed);
+        linearLayout = rootview.findViewById(R.id.newContract);
         try {
             run();
         } catch (IOException e) {
@@ -61,14 +68,19 @@ public class NewFormFragment extends Fragment {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(Call call, final Response response) throws IOException {
 
                 final String myResponse = response.body().string();
 
                 Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        text.setText(myResponse);
+                        if(myResponse.equals("false")){
+                            fail_text.setVisibility(View.VISIBLE);
+                        } else {
+                            linearLayout.setVisibility(View.VISIBLE);
+                        }
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
 
