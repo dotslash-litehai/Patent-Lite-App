@@ -84,6 +84,9 @@ public class StatusFragment extends Fragment { ;
                 Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        rootview.findViewById(R.id.constraint).setVisibility(View.VISIBLE);
+                        rootview.findViewById(R.id.infoLayout).setVisibility(View.VISIBLE);
+                        rootview.findViewById(R.id.progressBar).setVisibility(View.GONE);
                         TextView id_view = rootview.findViewById(R.id.patentID);
                         id_view.setText(id);
                         TextView status_view = rootview.findViewById(R.id.status);

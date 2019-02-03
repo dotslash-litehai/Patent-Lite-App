@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/constraint"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="24dp"
+            android:visibility="invisible">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -57,13 +58,21 @@
                 tools:text="5" />
         </android.support.constraint.ConstraintLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:id="@+id/infoLayout"
             android:layout_below="@id/constraint"
             android:layout_marginTop="50dp"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:visibility="invisible">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

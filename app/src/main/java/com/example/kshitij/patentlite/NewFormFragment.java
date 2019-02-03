@@ -78,7 +78,7 @@ public class NewFormFragment extends Fragment {
 
                 final String myResponse = response.body().string();
 
-                Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         if(myResponse.equals("false")){
