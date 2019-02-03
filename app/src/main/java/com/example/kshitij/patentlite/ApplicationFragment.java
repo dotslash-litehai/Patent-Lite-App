@@ -97,22 +97,10 @@ public class ApplicationFragment extends Fragment {
                                         image.setImageDrawable(getResources().getDrawable(R.drawable.circle_yellow));
                                     }
                                 } else {
-                                    TextView name = rootview.findViewById(R.id.nameContract);
-                                    name.setText(value);
-                                }
-                            }
-                            JSONArray contractActions = object.getJSONArray("contractActions");
-                            JSONObject first = contractActions.getJSONObject(0);
-                            JSONArray params = first.getJSONArray("parameters");
-                            for(int i =0;i<2;i++){
-                                JSONObject temp = params.getJSONObject(i);
-                                String value = temp.getString("value");
-                                if(i==0){
-                                    TextView description = rootview.findViewById(R.id.description);
-                                    description.setText(value);
-                                } else {
-                                    TextView claims = rootview.findViewById(R.id.numberofClaims);
-                                    claims.setText("Number of Claims :- " + value);
+                                    TextView name = rootview.findViewById(R.id.abstractDetails);
+                                    String abstarct = value.substring(0,8);
+                                    abstarct = abstarct + '\n' + value.substring(9) + '\n';
+                                    name.setText(abstarct);
                                 }
                             }
 
@@ -134,22 +122,22 @@ public class ApplicationFragment extends Fragment {
         if(role==1){
             //Applicant
             request = new Request.Builder()
-                    .url("https://litehai-vtt6wd-api.azurewebsites.net/api/v1/contracts/10")
+                    .url("https://litehai-vtt6wd-api.azurewebsites.net/api/v1/contracts/12")
                     .get()
-                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTYyOTQyLCJuYmYiOjE1NDkxNjI5NDIsImV4cCI6MTU0OTE2Njg0MiwiYWNyIjoiMSIsImFpbyI6IjQySmdZR0Q4ZmZPdmFzNGVOcjRETC9QZFhDTFlQbjFXTlpUb2VyNWpwWGs0bThXNjZ5VUEiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDkuMzQuNzAuMTk1IiwibmFtZSI6IkFwcGxpY2FudCIsIm9pZCI6IjgxNjE2YzE4LTdlMGEtNDgxMC05NjEzLTdmNjQ0YjgwYmQzZSIsInNjcCI6IlVzZXIuUmVhZCBVc2VyLlJlYWRCYXNpYy5BbGwiLCJzdWIiOiJYRHNfaGJIZHJxR1RYaDJxWUxUYWxocjdxTFlJSXF0M0dTSXRiZ2d5dnY0IiwidGlkIjoiNDlkYjAxODgtNWY4YS00M2U0LTk3MDgtOGY4MjQwOGRkMDk4IiwidW5pcXVlX25hbWUiOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJlTzhieUhEUlJVcVBkSXpITjJ3Z0FBIiwidmVyIjoiMS4wIn0.Q-1Dl983xCTuA2wHrexmE7Wz6XYyJEBR6Sh2Pz10UdxVFnb6oplEyDicPACvO_QH00_Xket77duvABtQw8b82qh1lHomtNM_hJcK7eVjIztEqj7diHIx_gcuMiuKF5W-Ja7mMnrrBal2L6s_LZMjzmv78kqcNiw-iGtmoan6MdWSOC5D7eCeWFhImWKS2LaZlZJMF6JYz3dlkPhJkrKdbm4tZNNNy1siTMvFtUMVUUQLufIF4GI3PhJt70MCXkK8FGRNFEGS0tIn1KcZnmvaEbQ3qPjzGJgzizRBKlRKupAb2lqG6AP8aAxs3K3eaA0kuXtaABRUzxXAiXYEDP0BzA")
+                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTY4NjU1LCJuYmYiOjE1NDkxNjg2NTUsImV4cCI6MTU0OTE3MjU1NSwiYWNyIjoiMSIsImFpbyI6IjQySmdZTWdQenpxVGVTdmU3ZjdiTTF2OGx6UE1FclRZN2RmME52SGxVZ2JHZzRzcitQb0EiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDIuMTA4LjIwMi44OCIsIm5hbWUiOiJBcHBsaWNhbnQiLCJvaWQiOiI4MTYxNmMxOC03ZTBhLTQ4MTAtOTYxMy03ZjY0NGI4MGJkM2UiLCJzY3AiOiJVc2VyLlJlYWQgVXNlci5SZWFkQmFzaWMuQWxsIiwic3ViIjoiWERzX2hiSGRycUdUWGgycVlMVGFsaHI3cUxZSUlxdDNHU0l0YmdneXZ2NCIsInRpZCI6IjQ5ZGIwMTg4LTVmOGEtNDNlNC05NzA4LThmODI0MDhkZDA5OCIsInVuaXF1ZV9uYW1lIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXBuIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXRpIjoieW5WdnBrUURkRVM1SVYyYzA3dFBBQSIsInZlciI6IjEuMCJ9.X8-9s17_dhrSfiwOeZQTqLbmjgXWCaBgny9p5AjMFOwzojlpyfd73Tj1eL95oTwXfo5d6gwdiPwF5Jv_kUpfBImSgET-4VBaD_tsl-R_bo-YakESQ7404KtSkct8UD6P8JyzZo50IQ0CyBz-vj4Au21fDpNdyPI2mEUI0ueqQWHnNeVw8iTgb-2IaeYo4rnjnZUewjc4wsYRydVmj-TzfEG7u5UcpipUzu3chjGFMz43BlnswRci796Zy7rLD57K4p8EYkv8sfwHMqaQJTIgi0xLtO7Yb3k4HmUT0fjgyqJaHc4FKcsPhkfR3_gtnU2lsZaK0zZ2FLtzsUz4-DYung")
                     .addHeader("cache-control", "no-cache")
-                    .addHeader("Postman-Token", "025fa8b6-ba0c-4ef3-adcd-ac23585aa410")
+                    .addHeader("Postman-Token", "f44fc093-2b80-4c08-8eec-2421c0a000d8")
                     .build();
 
 
         } else if (role==2){
             //Appraiser
             request = new Request.Builder()
-                    .url("https://litehai-vtt6wd-api.azurewebsites.net/api/v1/contracts/11")
+                    .url("https://litehai-vtt6wd-api.azurewebsites.net/api/v1/contracts/12")
                     .get()
-                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTYyOTQyLCJuYmYiOjE1NDkxNjI5NDIsImV4cCI6MTU0OTE2Njg0MiwiYWNyIjoiMSIsImFpbyI6IjQySmdZR0Q4ZmZPdmFzNGVOcjRETC9QZFhDTFlQbjFXTlpUb2VyNWpwWGs0bThXNjZ5VUEiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDkuMzQuNzAuMTk1IiwibmFtZSI6IkFwcGxpY2FudCIsIm9pZCI6IjgxNjE2YzE4LTdlMGEtNDgxMC05NjEzLTdmNjQ0YjgwYmQzZSIsInNjcCI6IlVzZXIuUmVhZCBVc2VyLlJlYWRCYXNpYy5BbGwiLCJzdWIiOiJYRHNfaGJIZHJxR1RYaDJxWUxUYWxocjdxTFlJSXF0M0dTSXRiZ2d5dnY0IiwidGlkIjoiNDlkYjAxODgtNWY4YS00M2U0LTk3MDgtOGY4MjQwOGRkMDk4IiwidW5pcXVlX25hbWUiOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJlTzhieUhEUlJVcVBkSXpITjJ3Z0FBIiwidmVyIjoiMS4wIn0.Q-1Dl983xCTuA2wHrexmE7Wz6XYyJEBR6Sh2Pz10UdxVFnb6oplEyDicPACvO_QH00_Xket77duvABtQw8b82qh1lHomtNM_hJcK7eVjIztEqj7diHIx_gcuMiuKF5W-Ja7mMnrrBal2L6s_LZMjzmv78kqcNiw-iGtmoan6MdWSOC5D7eCeWFhImWKS2LaZlZJMF6JYz3dlkPhJkrKdbm4tZNNNy1siTMvFtUMVUUQLufIF4GI3PhJt70MCXkK8FGRNFEGS0tIn1KcZnmvaEbQ3qPjzGJgzizRBKlRKupAb2lqG6AP8aAxs3K3eaA0kuXtaABRUzxXAiXYEDP0BzA")
+                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTY4NjU1LCJuYmYiOjE1NDkxNjg2NTUsImV4cCI6MTU0OTE3MjU1NSwiYWNyIjoiMSIsImFpbyI6IjQySmdZTWdQenpxVGVTdmU3ZjdiTTF2OGx6UE1FclRZN2RmME52SGxVZ2JHZzRzcitQb0EiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDIuMTA4LjIwMi44OCIsIm5hbWUiOiJBcHBsaWNhbnQiLCJvaWQiOiI4MTYxNmMxOC03ZTBhLTQ4MTAtOTYxMy03ZjY0NGI4MGJkM2UiLCJzY3AiOiJVc2VyLlJlYWQgVXNlci5SZWFkQmFzaWMuQWxsIiwic3ViIjoiWERzX2hiSGRycUdUWGgycVlMVGFsaHI3cUxZSUlxdDNHU0l0YmdneXZ2NCIsInRpZCI6IjQ5ZGIwMTg4LTVmOGEtNDNlNC05NzA4LThmODI0MDhkZDA5OCIsInVuaXF1ZV9uYW1lIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXBuIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXRpIjoieW5WdnBrUURkRVM1SVYyYzA3dFBBQSIsInZlciI6IjEuMCJ9.X8-9s17_dhrSfiwOeZQTqLbmjgXWCaBgny9p5AjMFOwzojlpyfd73Tj1eL95oTwXfo5d6gwdiPwF5Jv_kUpfBImSgET-4VBaD_tsl-R_bo-YakESQ7404KtSkct8UD6P8JyzZo50IQ0CyBz-vj4Au21fDpNdyPI2mEUI0ueqQWHnNeVw8iTgb-2IaeYo4rnjnZUewjc4wsYRydVmj-TzfEG7u5UcpipUzu3chjGFMz43BlnswRci796Zy7rLD57K4p8EYkv8sfwHMqaQJTIgi0xLtO7Yb3k4HmUT0fjgyqJaHc4FKcsPhkfR3_gtnU2lsZaK0zZ2FLtzsUz4-DYung")
                     .addHeader("cache-control", "no-cache")
-                    .addHeader("Postman-Token", "025fa8b6-ba0c-4ef3-adcd-ac23585aa410")
+                    .addHeader("Postman-Token", "f44fc093-2b80-4c08-8eec-2421c0a000d8")
                     .build();
 
 
@@ -158,9 +146,9 @@ public class ApplicationFragment extends Fragment {
             request = new Request.Builder()
                     .url("https://litehai-vtt6wd-api.azurewebsites.net/api/v1/contracts/11")
                     .get()
-                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTYyOTQyLCJuYmYiOjE1NDkxNjI5NDIsImV4cCI6MTU0OTE2Njg0MiwiYWNyIjoiMSIsImFpbyI6IjQySmdZR0Q4ZmZPdmFzNGVOcjRETC9QZFhDTFlQbjFXTlpUb2VyNWpwWGs0bThXNjZ5VUEiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDkuMzQuNzAuMTk1IiwibmFtZSI6IkFwcGxpY2FudCIsIm9pZCI6IjgxNjE2YzE4LTdlMGEtNDgxMC05NjEzLTdmNjQ0YjgwYmQzZSIsInNjcCI6IlVzZXIuUmVhZCBVc2VyLlJlYWRCYXNpYy5BbGwiLCJzdWIiOiJYRHNfaGJIZHJxR1RYaDJxWUxUYWxocjdxTFlJSXF0M0dTSXRiZ2d5dnY0IiwidGlkIjoiNDlkYjAxODgtNWY4YS00M2U0LTk3MDgtOGY4MjQwOGRkMDk4IiwidW5pcXVlX25hbWUiOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJlTzhieUhEUlJVcVBkSXpITjJ3Z0FBIiwidmVyIjoiMS4wIn0.Q-1Dl983xCTuA2wHrexmE7Wz6XYyJEBR6Sh2Pz10UdxVFnb6oplEyDicPACvO_QH00_Xket77duvABtQw8b82qh1lHomtNM_hJcK7eVjIztEqj7diHIx_gcuMiuKF5W-Ja7mMnrrBal2L6s_LZMjzmv78kqcNiw-iGtmoan6MdWSOC5D7eCeWFhImWKS2LaZlZJMF6JYz3dlkPhJkrKdbm4tZNNNy1siTMvFtUMVUUQLufIF4GI3PhJt70MCXkK8FGRNFEGS0tIn1KcZnmvaEbQ3qPjzGJgzizRBKlRKupAb2lqG6AP8aAxs3K3eaA0kuXtaABRUzxXAiXYEDP0BzA")
+                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTY4NjU1LCJuYmYiOjE1NDkxNjg2NTUsImV4cCI6MTU0OTE3MjU1NSwiYWNyIjoiMSIsImFpbyI6IjQySmdZTWdQenpxVGVTdmU3ZjdiTTF2OGx6UE1FclRZN2RmME52SGxVZ2JHZzRzcitQb0EiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDIuMTA4LjIwMi44OCIsIm5hbWUiOiJBcHBsaWNhbnQiLCJvaWQiOiI4MTYxNmMxOC03ZTBhLTQ4MTAtOTYxMy03ZjY0NGI4MGJkM2UiLCJzY3AiOiJVc2VyLlJlYWQgVXNlci5SZWFkQmFzaWMuQWxsIiwic3ViIjoiWERzX2hiSGRycUdUWGgycVlMVGFsaHI3cUxZSUlxdDNHU0l0YmdneXZ2NCIsInRpZCI6IjQ5ZGIwMTg4LTVmOGEtNDNlNC05NzA4LThmODI0MDhkZDA5OCIsInVuaXF1ZV9uYW1lIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXBuIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXRpIjoieW5WdnBrUURkRVM1SVYyYzA3dFBBQSIsInZlciI6IjEuMCJ9.X8-9s17_dhrSfiwOeZQTqLbmjgXWCaBgny9p5AjMFOwzojlpyfd73Tj1eL95oTwXfo5d6gwdiPwF5Jv_kUpfBImSgET-4VBaD_tsl-R_bo-YakESQ7404KtSkct8UD6P8JyzZo50IQ0CyBz-vj4Au21fDpNdyPI2mEUI0ueqQWHnNeVw8iTgb-2IaeYo4rnjnZUewjc4wsYRydVmj-TzfEG7u5UcpipUzu3chjGFMz43BlnswRci796Zy7rLD57K4p8EYkv8sfwHMqaQJTIgi0xLtO7Yb3k4HmUT0fjgyqJaHc4FKcsPhkfR3_gtnU2lsZaK0zZ2FLtzsUz4-DYung")
                     .addHeader("cache-control", "no-cache")
-                    .addHeader("Postman-Token", "025fa8b6-ba0c-4ef3-adcd-ac23585aa410")
+                    .addHeader("Postman-Token", "f44fc093-2b80-4c08-8eec-2421c0a000d8")
                     .build();
 
 
@@ -169,9 +157,9 @@ public class ApplicationFragment extends Fragment {
             request = new Request.Builder()
                     .url("https://litehai-vtt6wd-api.azurewebsites.net/api/v1/contracts/11")
                     .get()
-                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTYyOTQyLCJuYmYiOjE1NDkxNjI5NDIsImV4cCI6MTU0OTE2Njg0MiwiYWNyIjoiMSIsImFpbyI6IjQySmdZR0Q4ZmZPdmFzNGVOcjRETC9QZFhDTFlQbjFXTlpUb2VyNWpwWGs0bThXNjZ5VUEiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDkuMzQuNzAuMTk1IiwibmFtZSI6IkFwcGxpY2FudCIsIm9pZCI6IjgxNjE2YzE4LTdlMGEtNDgxMC05NjEzLTdmNjQ0YjgwYmQzZSIsInNjcCI6IlVzZXIuUmVhZCBVc2VyLlJlYWRCYXNpYy5BbGwiLCJzdWIiOiJYRHNfaGJIZHJxR1RYaDJxWUxUYWxocjdxTFlJSXF0M0dTSXRiZ2d5dnY0IiwidGlkIjoiNDlkYjAxODgtNWY4YS00M2U0LTk3MDgtOGY4MjQwOGRkMDk4IiwidW5pcXVlX25hbWUiOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJhcHBsaWNhbnRAaW5zaXlhaGhham9vcmlnbWFpbC5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJlTzhieUhEUlJVcVBkSXpITjJ3Z0FBIiwidmVyIjoiMS4wIn0.Q-1Dl983xCTuA2wHrexmE7Wz6XYyJEBR6Sh2Pz10UdxVFnb6oplEyDicPACvO_QH00_Xket77duvABtQw8b82qh1lHomtNM_hJcK7eVjIztEqj7diHIx_gcuMiuKF5W-Ja7mMnrrBal2L6s_LZMjzmv78kqcNiw-iGtmoan6MdWSOC5D7eCeWFhImWKS2LaZlZJMF6JYz3dlkPhJkrKdbm4tZNNNy1siTMvFtUMVUUQLufIF4GI3PhJt70MCXkK8FGRNFEGS0tIn1KcZnmvaEbQ3qPjzGJgzizRBKlRKupAb2lqG6AP8aAxs3K3eaA0kuXtaABRUzxXAiXYEDP0BzA")
+                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCIsImtpZCI6Ii1zeE1KTUxDSURXTVRQdlp5SjZ0eC1DRHh3MCJ9.eyJhdWQiOiI2MzRjOGFjYS1mZmE1LTQyMmMtODM5My0zZjQzYTA4ZDY3ZDkiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80OWRiMDE4OC01ZjhhLTQzZTQtOTcwOC04ZjgyNDA4ZGQwOTgvIiwiaWF0IjoxNTQ5MTY4NjU1LCJuYmYiOjE1NDkxNjg2NTUsImV4cCI6MTU0OTE3MjU1NSwiYWNyIjoiMSIsImFpbyI6IjQySmdZTWdQenpxVGVTdmU3ZjdiTTF2OGx6UE1FclRZN2RmME52SGxVZ2JHZzRzcitQb0EiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjM0YzhhY2EtZmZhNS00MjJjLTgzOTMtM2Y0M2EwOGQ2N2Q5IiwiYXBwaWRhY3IiOiIwIiwiaXBhZGRyIjoiNDIuMTA4LjIwMi44OCIsIm5hbWUiOiJBcHBsaWNhbnQiLCJvaWQiOiI4MTYxNmMxOC03ZTBhLTQ4MTAtOTYxMy03ZjY0NGI4MGJkM2UiLCJzY3AiOiJVc2VyLlJlYWQgVXNlci5SZWFkQmFzaWMuQWxsIiwic3ViIjoiWERzX2hiSGRycUdUWGgycVlMVGFsaHI3cUxZSUlxdDNHU0l0YmdneXZ2NCIsInRpZCI6IjQ5ZGIwMTg4LTVmOGEtNDNlNC05NzA4LThmODI0MDhkZDA5OCIsInVuaXF1ZV9uYW1lIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXBuIjoiYXBwbGljYW50QGluc2l5YWhoYWpvb3JpZ21haWwub25taWNyb3NvZnQuY29tIiwidXRpIjoieW5WdnBrUURkRVM1SVYyYzA3dFBBQSIsInZlciI6IjEuMCJ9.X8-9s17_dhrSfiwOeZQTqLbmjgXWCaBgny9p5AjMFOwzojlpyfd73Tj1eL95oTwXfo5d6gwdiPwF5Jv_kUpfBImSgET-4VBaD_tsl-R_bo-YakESQ7404KtSkct8UD6P8JyzZo50IQ0CyBz-vj4Au21fDpNdyPI2mEUI0ueqQWHnNeVw8iTgb-2IaeYo4rnjnZUewjc4wsYRydVmj-TzfEG7u5UcpipUzu3chjGFMz43BlnswRci796Zy7rLD57K4p8EYkv8sfwHMqaQJTIgi0xLtO7Yb3k4HmUT0fjgyqJaHc4FKcsPhkfR3_gtnU2lsZaK0zZ2FLtzsUz4-DYung")
                     .addHeader("cache-control", "no-cache")
-                    .addHeader("Postman-Token", "025fa8b6-ba0c-4ef3-adcd-ac23585aa410")
+                    .addHeader("Postman-Token", "f44fc093-2b80-4c08-8eec-2421c0a000d8")
                     .build();
 
         }
