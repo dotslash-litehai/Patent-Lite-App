@@ -14,7 +14,7 @@
             android:id="@+id/newContract"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:visibility="invisible"
             android:orientation="vertical">
 
             <TextView
@@ -167,6 +167,7 @@
             android:layout_margin="16dp"
             android:textColor="#ffffff"
             android:backgroundTint="@color/bg"
+            android:visibility="invisible"
             android:layout_below="@id/newContract"
             android:padding="8dp"/>
     </RelativeLayout>

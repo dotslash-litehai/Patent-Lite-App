@@ -13,6 +13,7 @@ import java.util.Objects;
 public class NavigationActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
+    public int role;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -42,12 +43,13 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         setTitle("Applications");
+        role = getIntent().getExtras().getInt("role");
         BottomNavigationView navigation = findViewById(R.id.navigation);
         viewPager = findViewById(R.id.viewpager);
 
         // Create an adapter that knows which fragment should be shown on each page
         SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
-
+        adapter.setRole(role);
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
